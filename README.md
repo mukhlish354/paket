@@ -213,6 +213,44 @@ Total Biaya Pengiriman: Rp 38,700
 ```
 # Penjelasan
 program untuk menghitung biaya pengiriman paket berdasarkan beberapa faktor seperti berat paket, jarak pengiriman, jenis pengiriman, dan status keanggotaan pelanggan.
+# 1. Fungsi `hitung_biaya_pengiriman`
+Fungsi ini menerima empat parameter:
+
+- `berat` (float): Berat paket dalam kilogram.
+- `jarak` (float): Jarak pengiriman dalam kilometer.
+- `jenis_pengiriman` (str): Jenis pengiriman, bisa "biasa" atau "express".
+- `is_member` (bool): Status keanggotaan pelanggan (True jika member, False jika non-member)
+
+Kemudian, fungsi ini menghitung total biaya pengiriman berdasarkan ketentuan berikut:
+
+1. Biaya dasar pengiriman adalah Rp 10.000.
+2. Jika berat paket lebih dari 5 kg, dikenakan tambahan Rp 5.000.
+3. Jika jarak pengiriman lebih dari 10 km, dikenakan tambahan Rp 8.000.
+4. Jika jenis pengiriman adalah express, dikenakan tambahan Rp 20.000.
+5. Jika pelanggan adalah member, diberikan diskon 10%.
+
+# 2. Program Utama (Input dari Pengguna)
+Bagian ini memungkinkan pengguna memasukkan data melalui input dan memastikan bahwa input yang dimasukkan valid.
+
+**1. Memasukkan berat paket**
+- Menggunakan **loop** `while` agar pengguna tidak bisa menggunakan nilai negatif atau karakter yang tidak valid.
+- Jika input bukan angka, akan muncul pesan error dan pengguna diminta memasukkan kembali.
+
+**2. Memasukkan jarak pengiriman**
+-  Mirip dengan berat paket, jarak juga tidak boleh negatif
+
+**3. Memasukkan jenis pengiriman**
+- Hanya menerima **"biasa"** atau **""express""**, jika tidal valid,pengguna diminta mengulang input.
+
+**4. Memasukkan status keanggotaan**
+- Hanya menerima **""ya""** atau **""tidak""**, lalu dikonversi menjadi tipe boolean(`True` untuk **""ya""**, `False` untuk **""tidak""**).
+
+ **5. Menghitung biaya pengiriman**
+ - Memanggil fungsi `hitung_biaya_pengiriman` dengan input yang telah diperoleh.
+
+**6. Menampilkan hasil perhitungan**
+- Menampilkan rincian input dan total biaya pengiriman dalam format uang dengan koma (`Rp 10,000`).
+
 
 
 
